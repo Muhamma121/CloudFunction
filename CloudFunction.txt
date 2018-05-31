@@ -1,0 +1,44 @@
+int blueled = D1;
+int redled = D2;
+int greenled = D0;
+int LedToggle(String command);
+void setup() {
+pinMode(redled, OUTPUT);
+  pinMode(greenled, OUTPUT);
+  pinMode(blueled, OUTPUT);
+  Particle.function("LedToggle", LedToggle);
+   digitalWrite(redled, LOW);
+}
+
+void loop() {
+
+}
+int LedToggle(String command)
+{
+    if(command == "red")
+    {
+        digitalWrite(redled, HIGH);
+    }
+    else 
+    {
+        digitalWrite(redled, LOW);
+    }
+    
+    if(command == "green")
+    {
+        digitalWrite(greenled, HIGH);
+    }
+    else 
+    {
+        digitalWrite(greenled, LOW);
+    }
+    
+    if (command == "blue")
+    {
+        digitalWrite(blueled, HIGH);
+    }
+    else 
+    {
+        digitalWrite(blueled, LOW);
+    }
+}
